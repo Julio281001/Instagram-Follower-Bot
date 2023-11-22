@@ -36,3 +36,18 @@ class InstagramBot:
     self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/a[1]/div[1]/div/div/div[2]/div/div').click()
     time.sleep(10)
     self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[2]/div[2]/section/main/div/header/section/ul/li[3]/a').click()
+  
+
+  def follow(self):
+    counter = 1
+    while True:
+      time.sleep(10)
+      try:
+        self.driver.find_element(By.XPATH, f'/html/body/div[6]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[4]/div/div/div[{counter}]/div/div/div/div[3]/div/button').click()
+        try:
+          self.driver.find_element(By.XPATH, '/html/body/div[7]/div[1]/div/div[2]/div/div/div/div/div/div/button[2]').click()
+        except:
+          pass
+      except :
+        break
+      counter += 1
